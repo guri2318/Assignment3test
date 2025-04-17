@@ -1,16 +1,27 @@
 # Assignment3test
-The following document demonstrates both the functionality and purpose of the provided Python script. The programming code enables staff to enter product prices alongside total cost calculations while verifying request approval status for products referred to as requisitions. The final decision depends on the complete cost of all chosen items.
+ KISS – Keep It Simple, Stupid
+I kept all aspects direct and easy to understand. All functions remain brief and easy to understand. Each check within the requisition system (such as whether the total amount is below a certain threshold) depends on a single if statement without any unnecessary additional programming.
 
-1. Staff and Requisition Identification
-The program requires staff users to provide their ID and requisition ID before the code starts. The provided functionality helps track both the requesting staff member and monitors individual purchase requests from workforce members.
-2. Entering Product Prices
-The program demands two price entries following the entry of identification numbers. The program saves these product prices into two variables named price1 and price2. The program attempts to find the total cost through an addition of price1 along with price2 and price3. The program contains a programming error because price3 is missing from the input requests to the user. The program will run into an error since price3 has not been defined. Either the price3 entry needs removal or the user should input the price through the program.
+ DRY – Don’t Repeat Yourself
+Depictions of identical logics were eliminated from my codebase. Each printing of requisition information requires a single function to carry out treatment. The function exists in one location for all print modifications so I do not need to update it multiple times.
 
-3. Approval or Pending Status
-The program executes a condition to verify whether the total price stands below $500. The program sets the requisition status to "approved" when total price surpasses $500. A total price of $500 or above marks the requisition status as "pending". The automatic approval system of tiny purchases while controlling extensive payments makes this feature beneficial to organizations that need it.
+ SRP – Single Responsibility Principle
+The application programming code contains functions consisting of single tasks. The function responsible for approval validations prevents printing operations. The function dedicated to displaying info is separate from both total computation and approval verification. Each one sticks to its role.
 
-4. Displaying Information
-After obtaining staff ID and requisition ID together with total cost and status the program generates a basic report that displays all information to the user.
+ Open/Closed Principle
+This code contains features that let it handle new functions effectively as it expands. The system enables me to create new functions containing approval rules without making any changes to existing functions.
 
-5. Additional Product Details
-The following segment of the program requests information about three products along with their corresponding prices. The code stores all necessary details in product_1, product_2, product_3 and price_1, price_2, price_3 variables. The program collects the entered prices before computing and showing the complete total expense.
+ Composition Over Inheritance 
+I adopted a similar approach in my project despite not applying actual classes since I split tasks into small components which used reusable functions rather than grouping everything within one area.
+
+ Separation of Concerns
+Each script functions for an explicit reason. Each script has a dedicated function that either performs approvals or works with display logic or input processing or calculation functions. Fixes or updates performed on a single part become easier because they do not require modifications throughout the entire program.
+
+The principle YAGNI dictates that we only create what we need now because extra features are unnecessary.
+All the features I integrated served direct purposes I would use. No extra functions, no unused variables. The exact tools which perfectly suited my current work requirements.
+
+ Avoid Premature Optimization
+The logic needed to function properly before any optimization attempts focusing on speedup or output reduction were made. I finished program testing before improving its readability through code reorganization for better appearance and comprehension.
+
+ Refactor and Clean Code
+I returned to modify the code I had already written. The code received its naming improvements and unnecessary lines got removed while maintaining proper organization. I adopted names which offer effortless understanding for any person who reviews the code.
